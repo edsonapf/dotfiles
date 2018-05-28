@@ -48,16 +48,19 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-set $workspace1 "1: Browser "
-set $workspace2 "2: Communication "
-set $workspace3 "3: Editor "
-set $workspace4 "4:"
-set $workspace5 "5:"
-set $workspace6 "6:"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace10 "10: Music "
+# replace the terminal
+bindsym $mod+Return exec terminator #rxvt-unicode
+
+set $workspace1 "1: "
+set $workspace2 "2: "
+set $workspace3 "3: "
+set $workspace4 "4: "
+set $workspace5 "5: "
+set $workspace6 "6: "
+set $workspace7 "7: "
+set $workspace8 "8: "
+set $workspace9 "9: "
+set $workspace10 "10: "
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -90,7 +93,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit i3
-bindsym $mod+Shift+e exec /home/caiomcg/.config/i3/scripts/exit_menu
+bindsym $mod+Shift+e exec ~/.config/i3/scripts/exit_menu
 
 
 # resize window (you can also use the mouse for that)
@@ -128,7 +131,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 # bar
 bar {
 	font pango: Inconsolata for Powerline, FontAwesome 12
-    status_command /home/caiomcg/.config/i3/bumblebee-status/bumblebee-status -m spotify cpu memory traffic amixer battery datetime -t gruvbox-powerline
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     position top
 
 	colors {
@@ -146,49 +149,65 @@ bar {
 bindsym $mod+Shift+s sticky toggle
 
 # floating
-# for_window [class="qTox"] floating enable
-# for_window [class="Pavucontrol"] floating enable
-# for_window [class="Skype"] floating enable
+for_window [class="Pavucontrol"] floating enable
 
 # default workspaces
-# assign [class="Spotify"] $workspace10
-# assign [class="Skype"] $workspace9
-# assign [class="qTox"] $workspace9
+for_window [class="Spotify"] move to workspace $workspace10
+assign [class="Google-chrome"] $workspace1
+assign [class="Code"] $workspace3
+assign [class="Slack"] $workspace2
+#assing thunar
 
 # workspace default monitors
-#workspace $workspace1 output DVI-I-2
-#workspace $workspace2 output DVI-I-2
-#workspace $workspace3 output DVI-I-2
-#workspace $workspace4 output DVI-I-2
-#workspace $workspace5 output DVI-I-2
-#workspace $workspace6 output DVI-I-2
-#workspace $workspace9 output DVI-I-2
-#workspace $workspace10 output DVI-I-2
+workspace $workspace1 output eDP-1
+workspace $workspace2 output eDP-1
+workspace $workspace3 output DP-1
+workspace $workspace4 output DP-1
+workspace $workspace5 output DP-1
+workspace $workspace6 output DP-1
+workspace $workspace9 output DP-1
+workspace $workspace10 output eDP-1
 
-# key-bindings
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 2 toggle # mute sound
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl play-pause
+# Key-bindings
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
+
+# Screenshot bindings
+bindsym --release Print exec "scrot -m '/home/caiomcg/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+bindsym --release Shift+Print exec "scrot -s '/home/caiomcg/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
+bindsym --release $mod+Shift+Print exec "scrot -u -d 4 '/home/caiomcg/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec exec light -A 5  # increase screen brightness with notification
+bindsym XF86MonBrightnessDown exec exec light -U 5  # decrease screen brightness with notification
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+
+bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym $mod+Shift+f exec firefox
-bindsym $mod+Return exec xfce4-terminal
+bindsym XF85AudioPrev exec playerctl previous
+bindsym $mod+Shift+f exec thunar
 bindsym $mod+Shift+q kill
 bindsym Print exec screenshot
-bindsym $mod+d exec /home/caiomcg/.config/i3/rofi.sh
+bindsym $mod+d exec rofi -show drun
 
 # startup
-exec_always --no-startup-id feh --bg-scale /home/caiomcg/Pictures/wallpaper.jpg
-#exec_always --no-startup-id xrandr --output HDMI-0 --off --output DVI-I-1 --off --output DVI-I-0 --off --output DVI-I-3 --mode 1920x1080 --pos 0x0 --rotate normal --output DVI-I-2 --mode 1920x1080 --pos 1920x0 --rotate normal
-#exec --no-startup-id spotify
-#exec --no-startup-id skype
+exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
+exec_always --no-startup-id ~/.screenlayout/screen.sh 
 
-# Keys
-exec_always xmodmap -e "clear lock" #disable caps lock switch
-exec_always xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
+exec --no-startup-id spotify
+exec --no-startup-id slack
+exec --no-startup-id google-chrome
 
-exec --no-startup-id compton -f
+exec --no-startup-id compton -f -cCGb --backend glx --vsync opengl
 exec --no-startup-id i3-msg $workspace1
 exec --no-startup-id nm-applet
+
+# Move focused workspace between monitors
+bindsym $mod+Ctrl+greater move workspace to output right
+bindsym $mod+Ctrl+less move workspace to output left
