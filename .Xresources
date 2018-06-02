@@ -1,0 +1,20 @@
+!-------------!
+! ROFI CONFIG !
+!-------------!
+
+! general
+rofi.width: 40
+rofi.padding: 70
+rofi.hide-scrollbar: true
+rofi.borderwidth: 0
+rofi.columns: 1
+rofi.lines: 5
+rofi.separator-style: solid
+rofi.font: IBMPlexMono-Regular 12
+
+rofi.color-enabled: true
+
+rofi.color-window: #0F0F0F, #7c8389, #CCCBCC
+rofi.color-normal: #0F0F0F, #c4cbd4, #490916, #CCCBCC, #0F0F0F
+rofi.color-active: #0F0F0F, #c4cbd4, #490916, #CCCBCC, #0F0F0F
+rofi.color-urgent: #0F0F0F, #c4cbd4, #490916, #CCCBCC, #0F0F0F
