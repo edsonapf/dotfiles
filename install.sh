@@ -64,21 +64,29 @@ function install-i3-tools {
 }
 
 function install-fonts {
-    sudo apt-get -y install fonts-powerline \
-        fonts-font-awesome
+    #sudo apt-get -y install fonts-powerline \
+    #    fonts-font-awesome
     
     mkdir -p $HOME/.fonts/IBM-Plex
+    mkdir -p $HOME/.fonts/Font-Awesome
     
     if [ ! -d "$REPOS_DIR/IBM-Plex" ]; then
         mkdir -p $REPOS_DIR/IBM-Plex
         git clone --branch v1.0.2 https://github.com/IBM/plex.git $REPOS_DIR/IBM-Plex
+    fi
+
+    if [ ! -d "$REPOS_DIR/Font-Awesome" ]; then
+        mkdir -p $REPOS_DIR/Font-Awesome
+        git clone --branch 5.0.13 https://github.com/FortAwesome/Font-Awesome.git $REPOS_DIR/Font-Awesome
     fi
     
     for dir in $(find $REPOS_DIR/IBM-Plex -mindepth 1 -maxdepth 1 -name "*IBM*" -type d)
     do
         cp -r $dir $HOME/.fonts/IBM-Plex
     done
-
+    
+    cp -r $REPOS_DIR/Font-Awesome/use-on-desktop $HOME/.fonts/Font-Awesome
+    
     fc-cache -fv
 }
 
