@@ -82,7 +82,7 @@ date =  %H:%M:%S
 
 [module/date]
 type = internal/date
-date =  %e %B - %A
+date =  %d/%m/%Y
 label = %date%
 
 
