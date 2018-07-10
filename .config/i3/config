@@ -146,8 +146,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # i3-gaps
 
-gaps inner 0
-gaps outer 0
+gaps inner 10
+gaps outer 10
 
 bindsym $mod+plus			gaps inner current plus 5
 bindsym $mod+minus	gaps inner current minus 5
@@ -218,7 +218,7 @@ exec --no-startup-id synclient NaturalScrolling=1 VertScrollDelta=-113
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id ~/.screenlayout/screen.sh 
 
-exec --no-startup-id spotify
+#exec --no-startup-id spotify
 exec --no-startup-id google-chrome
 
 exec --no-startup-id compton --paint-on-overlay --vsync opengl --dbe -f -D5

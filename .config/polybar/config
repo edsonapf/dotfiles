@@ -19,7 +19,7 @@ border-left-size = 10
 ;----------;
 
 bottom = false
-monitor = eDP-1
+monitor = ${env:MONITOR}
 wm-restack = none
 override-redirect = false
 
@@ -45,8 +45,8 @@ border-color = #0F0F0F
 ;---------------;
 
 fixed-center = true
-padding-left = 2 
-padding-right = 2
+padding-left = 0
+padding-right = 0
 module-margin = 1.5
 
 modules-left = volume backlight battery spotify
@@ -54,7 +54,7 @@ modules-center = i3
 modules-right = wlan ip cpu date time powermenu
 
 tray-position = right
-tray-padding = 0
+tray-padding = 10 
 tray-background = #0F0F0F
 
 
@@ -67,7 +67,7 @@ type = internal/i3
 
 pin-workspaces = true
 strip-wsnumbers = true
-enable-scroll = false
+enable-scroll = true
 
 label-unfocused-foreground = #6B6B6B
 label-focused-foreground = #CCCBCC
