@@ -39,10 +39,10 @@ else
 fi
 
 autoreconf --force --install
-rm -Rf build/
+rm -rf build/
 mkdir build
 cd build/
- ../configure --prefix=/usr --sysconfdir=/etc
+ ../configure --prefix=/usr --sysconfdir=/etc --disable-sabitizers
 make
 sudo make install
 which i3
