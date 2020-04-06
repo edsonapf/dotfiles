@@ -41,7 +41,9 @@ function install-polybar {
         libxcb-image0-dev \
         libxcb-randr0-dev \
         libxcb-xkb-dev \
-        libcurl4-openssl-dev
+        libcurl4-openssl-dev \
+	libjsoncpp-dev \
+	libxcb-composite0-dev
 
 
     if ! cd $REPOS_DIR/polybar; then \
