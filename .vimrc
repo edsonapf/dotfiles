@@ -7,7 +7,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 filetype plugin indent on
-
 set relativenumber
 set number
 set tabstop=4

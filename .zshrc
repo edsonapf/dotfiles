@@ -3,6 +3,8 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gruvbox"
 SOLARIZED_THEME="dark"
+KEYTIMEOUT=1
+
 
 plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx tmux)
 
