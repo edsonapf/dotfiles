@@ -4,7 +4,9 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="gruvbox"
 SOLARIZED_THEME="dark"
 
-plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx)
+plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx tmux)
+
+ZSH_TMUX_AUTOSTART=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -22,3 +24,4 @@ export EDITOR=vim
 # local environment
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+export TERM=xterm-256color
