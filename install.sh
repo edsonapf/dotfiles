@@ -8,3 +8,5 @@ cp *.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 
 cp .zshrc ~/
 cp .vimrc ~/
+
+cp -r .config/ ~/`.config/
