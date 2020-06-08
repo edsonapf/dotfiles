@@ -8,7 +8,6 @@ KEYTIMEOUT=1
 plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx tmux)
 
 ZSH_TMUX_AUTOSTART=true
-ZSH_TMUX_UNICODE=true
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,6 +16,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/sbin:/usr/sbin
 #export TERM=alacritty
 
+alias ls="ls --color"
 alias la="ls -a"
 alias l="ls -alF"
 
@@ -26,3 +26,4 @@ export EDITOR=vim
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 export TERM=xterm-256color
+export PATH="$HOME/.cargo/bin:$PATH"
