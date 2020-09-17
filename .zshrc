@@ -19,6 +19,9 @@ export PATH=$HOME/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/
 alias ls="ls --color"
 alias la="ls -a"
 alias l="ls -alF"
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 
 export EDITOR=vim
 
@@ -27,3 +30,6 @@ export EDITOR=vim
 
 export TERM=xterm-256color
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
