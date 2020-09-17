@@ -17,4 +17,6 @@ cp *.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 
 cp .zshrc ~/
 cp .tmux.conf ~/
-cp -r .config/ ~/.config/
+
+cp -r .config/nvim ~/.config/
+cp -r .config/alacritty ~/.config/
