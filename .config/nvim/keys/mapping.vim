@@ -6,6 +6,10 @@ map <silent> <TAB> :bnext<CR>
 map <silent> <S-TAB> :bprevious<CR>
 map <silent> <leader>q :bd<CR>
 
+map <silent> <leader>n :bnext<CR>
+map <silent> <leader>p :bprevious<CR>
+map <silent> <leader>q :bd<CR>
+
 " Toggle plugins such as tags menu, undo list and file tree
 map <silent> <F8> :TagbarToggle<CR>
 map <silent> <C-n> :NERDTreeToggle<CR>
@@ -71,4 +75,11 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 " Remap for rename current word
 nmap <F2> <Plug>(coc-rename)
 
-
+" FZF
+nnoremap <c-p> :Files<cr>
+augroup fzf
+  autocmd!
+  autocmd! FileType fzf
+  autocmd  FileType fzf set laststatus=0 noshowmode noruler
+    \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+augroup END

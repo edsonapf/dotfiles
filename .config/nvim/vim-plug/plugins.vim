@@ -12,33 +12,45 @@ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
   autocmd VimEnter * PlugInstall | q
 endif
 
+" Presents changes to files looking at the .git folder
 Plug 'airblade/vim-gitgutter'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-commentary'
-Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
+" Colorized parentheses/curly braces
 Plug 'luochen1990/rainbow'
-Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
-Plug 'preservim/nerdtree'
+" Add better naviagation
+Plug 'christoomey/vim-tmux-navigator'
+" Tags around a file
 Plug 'majutsushi/tagbar'
+" Show memento of a file
 Plug 'mbbill/undotree'
+" Gruvbox theme
+Plug 'morhetz/gruvbox'
+" Nerdtree pretty icons
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Dev Icons
+Plug 'ryanoasis/vim-devicons'
+" Conquer of Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Extra CPP Highlight
+Plug 'octol/vim-cpp-enhanced-highlight'
+" File tree
+Plug 'preservim/nerdtree'
+" Comment chuncks of code
+Plug 'tpope/vim-commentary'
+" Change surround characters
+Plug 'tpope/vim-surround'
+" Add airline bar
+Plug 'vim-airline/vim-airline'
+" Add realtime file checker
+Plug 'w0rp/ale'
+" Quick movement
+Plug 'unblevable/quick-scope'
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+" Wiki inside vim
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
-" Finaliza vim plug execution
+" Finish vim plug execution
 call plug#end()
-
-" COC completions
-let g:coc_global_extension = [
- \ 'coc-snippets',
- \ 'coc-pairs',
- \ 'coc-eslint',
- \ 'coc-clangd',
- \ 'coc-pip',
- \ 'coc-python',
- \ 'coc-rls',
- \ ]
 
