@@ -279,7 +279,7 @@ build_prompt() {
     RETVAL=$?
     prompt_status
     prompt_virtualenv
-    prompt_context
+    # prompt_context
     prompt_dir
     prompt_git
     prompt_bzr
@@ -287,7 +287,7 @@ build_prompt() {
     prompt_svn
     prompt_end
 
-    echo -n "\n%F{${PROMPT_ARROW_3}}❯%f"
+    #echo -n "\n%F{${PROMPT_ARROW_3}}❯%f"
     #echo -n "\n%F{${PROMPT_ARROW_1}}❯%f%F{${PROMPT_ARROW_2}}❯%f%F{${PROMPT_ARROW_3}}❯%f"
 }
 

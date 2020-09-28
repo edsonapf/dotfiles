@@ -8,13 +8,11 @@ KEYTIMEOUT=1
 plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx tmux)
 
 ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOQUIT=false
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-
 export PATH=$HOME/usr/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/sbin:/usr/sbin
-#export TERM=alacritty
 
 alias ls="ls --color"
 alias la="ls -a"
