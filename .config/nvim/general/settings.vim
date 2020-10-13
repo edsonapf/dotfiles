@@ -26,20 +26,27 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=yes
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
+set modifiable
 syntax on
 colorscheme gruvbox
 
+" Indent on save
+augroup autoindent
+    au!
+    autocmd BufWritePre * :normal migg=G`i
+augroup End
+
+
 " COC completions
 let g:coc_global_extension = [
- \ 'coc-snippets',
- \ 'coc-pairs',
- \ 'coc-eslint',
- \ 'coc-clangd',
- \ 'coc-pip',
- \ 'coc-python',
- \ 'coc-rls',
- \ ]
+            \ 'coc-snippets',
+            \ 'coc-pairs',
+            \ 'coc-eslint',
+            \ 'coc-clangd',
+            \ 'coc-pip',
+            \ 'coc-python',
+            \ 'coc-rls',
+            \ ]
 
 " Airline config
 let g:airline_powerline_fonts=1
@@ -80,10 +87,31 @@ highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=und
 
 " FZF
 let g:fzf_action = {
-      \ 'ctrl-s': 'split',
-      \ 'ctrl-v': 'vsplit'
-      \ }
+            \ 'ctrl-s': 'split',
+            \ 'ctrl-v': 'vsplit'
+            \ }
 let g:fzf_preview_window = 'right:60%'
 
 " Vimwiki
 let g:vimwiki_table_mapping = 0
+
+" Startfy
+let g:startify_files_number           = 10
+let g:startify_session_persistence    = 1
+let g:startify_lists = [
+            \ { 'type': 'files',     'header': ['   Files']            },
+            \ { 'type': 'sessions',  'header': ['   Saved sessions'] },
+            \ { 'type': 'dir',       'header': ['   Current Directory '. getcwd()] },
+            \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+            \ ]
+let g:startify_bookmarks = [
+            \ { 'i': '~/.config/nvim/init.vim' },
+            \ { 'z': '~/.zshrc' },
+            \ { 'w': '~/Workspace' },
+            \ ]
+let g:startify_custom_header = [
+            \ '   _  __     _     ',
+            \ '  / |/ /  __(_)_ _ ',
+            \ ' /    / |/ / /  ` \',
+            \ '/_/|_/|___/_/_/_/_/',
+            \]

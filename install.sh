@@ -1,4 +1,7 @@
 #!/bin/bash
+
+source install_fonts.sh
+
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     sudo add-apt-repository ppa:neovim-ppa/stable
     sudo apt-get update -y

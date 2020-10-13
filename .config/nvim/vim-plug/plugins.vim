@@ -1,15 +1,15 @@
 " Install vimplug if it is not installed already
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/plugged')
 
 " Automatically install missing plugins on startup
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-  autocmd VimEnter * PlugInstall | q
+    autocmd VimEnter * PlugInstall | q
 endif
 
 " Presents changes to files looking at the .git folder
@@ -50,6 +50,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
 " Wiki inside vim
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+" Start page
+Plug 'mhinz/vim-startify'
+" Pair autocompletion
+Plug 'jiangmiao/auto-pairs'
 
 " Finish vim plug execution
 call plug#end()
