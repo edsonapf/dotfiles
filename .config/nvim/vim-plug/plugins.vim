@@ -11,7 +11,6 @@ call plug#begin('~/.config/nvim/plugged')
 if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
     autocmd VimEnter * PlugInstall | q
 endif
-
 " Presents changes to files looking at the .git folder
 Plug 'airblade/vim-gitgutter'
 " Colorized parentheses/curly braces
@@ -23,7 +22,7 @@ Plug 'majutsushi/tagbar'
 " Show memento of a file
 Plug 'mbbill/undotree'
 " Gruvbox theme
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 " Nerdtree pretty icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Dev Icons
@@ -47,13 +46,18 @@ Plug 'unblevable/quick-scope'
 " FZF
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Set root folder as current dir
 Plug 'airblade/vim-rooter'
-" Wiki inside vim
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 " Start page
 Plug 'mhinz/vim-startify'
 " Pair autocompletion
 Plug 'jiangmiao/auto-pairs'
+" Clang format
+Plug 'rhysd/vim-clang-format'
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
+" JS Syntax highlight
+Plug 'pangloss/vim-javascript'
 
 " Finish vim plug execution
 call plug#end()

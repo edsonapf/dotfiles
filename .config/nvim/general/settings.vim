@@ -36,6 +36,8 @@ augroup autoindent
     autocmd BufWritePre * :normal migg=G`i
 augroup End
 
+autocmd FileType c ClangFormatAutoEnable
+autocmd FileType cpp ClangFormatAutoEnable
 
 " COC completions
 let g:coc_global_extension = [
@@ -46,6 +48,10 @@ let g:coc_global_extension = [
             \ 'coc-pip',
             \ 'coc-python',
             \ 'coc-rls',
+            \ 'coc-node',
+            \ 'coc-prettier',
+            \ 'coc-tsserver',
+            \ 'coc-eslint'
             \ ]
 
 " Airline config
@@ -115,3 +121,6 @@ let g:startify_custom_header = [
             \ ' /    / |/ / /  ` \',
             \ '/_/|_/|___/_/_/_/_/',
             \]
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab indentkeys-=0# indentkeys-=<:> foldmethod=indent nofoldenable
+

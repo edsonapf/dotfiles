@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 function compile() {
     cd alacritty
@@ -11,9 +11,11 @@ function compile() {
     sudo update-desktop-database
 }
 
-sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    sudo apt-get install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev python
+    git clone --branch v0.5.0 https://github.com/alacritty/alacritty.git
+    compile
 
-git clone --branch v0.5.0 https://github.com/alacritty/alacritty.git
-
-compile
-
+else
+    brew install alacritty
+fi
