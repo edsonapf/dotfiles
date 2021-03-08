@@ -1,12 +1,22 @@
 #!/bin/bash
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+source scripts/install_dependencies.sh
+source scripts/install_fonts.sh
+source scripts/install_zsh.sh
+source scripts/install_neovim.sh
+source scripts/install_rust.sh
+source scripts/install_vscode.sh
+source scripts/install_chrome.sh
+source scripts/install_tmux.sh
+source scripts/install_nvm.sh
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# Copy default configurations
+cp .tmux.conf ~/
+cp -r .config/* ~/.config/
+cp .gitconfig ~/
 
-cp *.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
+# Set ZSH as default shell
+chsh -s $(which zsh)
 
-cp .zshrc ~/
-cp .vimrc ~/
+echo "Please log off and log back in to see the changes"
 
-cp -r .config/ ~/`.config/
