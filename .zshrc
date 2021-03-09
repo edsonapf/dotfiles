@@ -3,9 +3,21 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="gruvbox"
 SOLARIZED_THEME="dark"
+
 KEYTIMEOUT=1
 
-plugins=(git pip python zsh-autosuggestions z zsh-syntax-highlighting osx tmux)
+plugins=(
+    git
+    pip
+    python 
+    z
+    osx
+    tmux
+    zsh-autosuggestions 
+    zsh-syntax-highlighting
+    zsh-completions
+    #fast-syntax-highlighting
+)
 
 ZSH_TMUX_AUTOSTART=true
 ZSH_TMUX_AUTOQUIT=false
@@ -20,6 +32,7 @@ alias l="ls -alF"
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
+alias r='ranger'
 alias clang-format='clang-format-7'
 
 export EDITOR=vim
@@ -34,4 +47,3 @@ export PATH="/snap/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
