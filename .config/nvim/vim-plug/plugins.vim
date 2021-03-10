@@ -22,7 +22,7 @@ Plug 'majutsushi/tagbar'
 " Show memento of a file
 Plug 'mbbill/undotree'
 " Gruvbox theme
-Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim', {'name' : 'dracula'}
 " Nerdtree pretty icons
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Dev Icons

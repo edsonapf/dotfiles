@@ -5,7 +5,7 @@ let mapleader = " "
 filetype plugin indent on
 set noerrorbells
 set number
-set relativenumber
+"set relativenumber
 set smartindent
 set nowrap
 set smartcase
@@ -28,7 +28,7 @@ set signcolumn=yes
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 set modifiable
 syntax on
-colorscheme gruvbox
+colorscheme dracula
 
 " Indent on save
 augroup autoindent

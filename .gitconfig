@@ -1,7 +1,5 @@
 [user]
-    name = caiomcg
-    email = caiomcg@gmail.com
+    name = yuregl 
+    email = yuregaldino@hotmail.com
 [credential]
     helper = store
-[core]
-    editor = /usr/bin/nvim

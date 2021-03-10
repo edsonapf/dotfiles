@@ -4,7 +4,7 @@ source scripts/install_dependencies.sh
 source scripts/install_fonts.sh
 source scripts/install_zsh.sh
 source scripts/install_neovim.sh
-source scripts/install_rust.sh
+#source scripts/install_rust.sh
 source scripts/install_vscode.sh
 source scripts/install_chrome.sh
 source scripts/install_tmux.sh
