@@ -10,6 +10,9 @@ source scripts/install_chrome.sh
 source scripts/install_tmux.sh
 source scripts/install_nvm.sh
 source scripts/install_docker.sh
+source scripts/install_gitkraken
+source scripts/install_openjdk
+source scripts/install_intellij
 
 # Copy default configurations
 cp .tmux.conf ~/
