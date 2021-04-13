@@ -13,6 +13,7 @@ source scripts/install_docker.sh
 source scripts/install_gitkraken.sh
 source scripts/install_openjdk.sh
 source scripts/install_intellij.sh
+source scripts/install_yarn.sh
 
 # Copy default configurations
 cp .tmux.conf ~/
