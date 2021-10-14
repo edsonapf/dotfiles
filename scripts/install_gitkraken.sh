@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    sudo snap install gitkraken --classic
+    wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+    sudo dpkg -i gitkraken-amd64.deb
 else
     echo "Skipping intellij installation"
 fi
